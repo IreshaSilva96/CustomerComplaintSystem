@@ -31,8 +31,7 @@ namespace CustomerComplaintSystem.Repositories
                                                                             || x.NIC.Contains(Attribute)
                                                                             || x.ContactNumber.ToString().Contains(Attribute)
                                                                             || x.Address.Contains(Attribute)
-                                                                            || x.Email.Contains(Attribute)
-                                                                            || x.GenderID.ToString().Contains(Attribute)).ToList();
+                                                                            || x.Email.Contains(Attribute)).ToList();
             return accountholder;
         }
 

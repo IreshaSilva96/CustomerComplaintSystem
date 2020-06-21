@@ -29,6 +29,9 @@ namespace CustomerComplaintSystem.Migrations
                     b.Property<int>("AccountHolderID")
                         .HasColumnType("int");
 
+                    b.Property<int>("AccountNumber")
+                        .HasColumnType("int");
+
                     b.Property<int>("AccountTypeID")
                         .HasColumnType("int");
 
@@ -71,9 +74,6 @@ namespace CustomerComplaintSystem.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<int>("GenderID")
-                        .HasColumnType("int");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
@@ -85,8 +85,6 @@ namespace CustomerComplaintSystem.Migrations
                         .HasMaxLength(20);
 
                     b.HasKey("AccountHolderID");
-
-                    b.HasIndex("GenderID");
 
                     b.ToTable("AccountHolder");
                 });
@@ -206,46 +204,39 @@ namespace CustomerComplaintSystem.Migrations
                     b.Property<int>("AccountID")
                         .HasColumnType("int");
 
-                    b.Property<int>("AgentID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BranchID")
-                        .HasColumnType("int");
+                    b.Property<string>("Branch")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CategoryOfComplaintID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ComplainedDate")
-                        .HasColumnType("datetime2")
-                        .HasMaxLength(20);
+                    b.Property<DateTime>("ComplaintLoggedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ComplaintDate")
-                        .HasColumnType("datetime2")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("ComplaintStatusID")
-                        .HasColumnType("int");
+                    b.Property<string>("ComplaintStatus")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContactNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<int>("CustomerTypeID")
-                        .HasColumnType("int");
+                    b.Property<string>("CustomerType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<int>("GenderID")
-                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -253,25 +244,18 @@ namespace CustomerComplaintSystem.Migrations
                         .HasMaxLength(20);
 
                     b.Property<string>("NIC")
-                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("NatureOfComplaintID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductAndServiceID")
+                        .HasColumnType("int");
+
                     b.HasKey("ComplaintID");
 
-                    b.HasIndex("AccountID");
-
-                    b.HasIndex("AgentID");
-
-                    b.HasIndex("BranchID");
-
                     b.HasIndex("CategoryOfComplaintID");
-
-                    b.HasIndex("ComplaintStatusID");
-
-                    b.HasIndex("CustomerTypeID");
-
-                    b.HasIndex("GenderID");
 
                     b.ToTable("Complaint");
                 });
@@ -353,23 +337,6 @@ namespace CustomerComplaintSystem.Migrations
                     b.ToTable("Employee");
                 });
 
-            modelBuilder.Entity("CustomerComplaintSystem.Entities.Gender", b =>
-                {
-                    b.Property<int>("GenderID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("GenderName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.HasKey("GenderID");
-
-                    b.ToTable("Gender");
-                });
-
             modelBuilder.Entity("CustomerComplaintSystem.Entities.NatureOfComplaint", b =>
                 {
                     b.Property<int>("NatureOfComplaintID")
@@ -435,15 +402,6 @@ namespace CustomerComplaintSystem.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CustomerComplaintSystem.Entities.AccountHolder", b =>
-                {
-                    b.HasOne("CustomerComplaintSystem.Entities.Gender", "ParentGender")
-                        .WithMany()
-                        .HasForeignKey("GenderID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("CustomerComplaintSystem.Entities.Agent", b =>
                 {
                     b.HasOne("CustomerComplaintSystem.Entities.AgentType", "ParentAgentType")
@@ -467,45 +425,9 @@ namespace CustomerComplaintSystem.Migrations
 
             modelBuilder.Entity("CustomerComplaintSystem.Entities.Complaint", b =>
                 {
-                    b.HasOne("CustomerComplaintSystem.Entities.Account", "ParentAccount")
-                        .WithMany()
-                        .HasForeignKey("AccountID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CustomerComplaintSystem.Entities.Agent", "ParentAgent")
-                        .WithMany()
-                        .HasForeignKey("AgentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CustomerComplaintSystem.Entities.Branch", "ParentBranch")
-                        .WithMany()
-                        .HasForeignKey("BranchID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("CustomerComplaintSystem.Entities.CategoryOfComplaint", "ParentCategoryOfComplaint")
                         .WithMany()
                         .HasForeignKey("CategoryOfComplaintID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CustomerComplaintSystem.Entities.ComplaintStatus", "ParentComplaintStatus")
-                        .WithMany()
-                        .HasForeignKey("ComplaintStatusID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CustomerComplaintSystem.Entities.CustomerType", "ParentCustomerType")
-                        .WithMany()
-                        .HasForeignKey("CustomerTypeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CustomerComplaintSystem.Entities.Gender", "ParentGender")
-                        .WithMany()
-                        .HasForeignKey("GenderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

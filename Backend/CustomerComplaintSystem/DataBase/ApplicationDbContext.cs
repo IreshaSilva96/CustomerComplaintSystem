@@ -22,7 +22,6 @@ namespace CustomerComplaintSystem.DataBase
         public DbSet<ComplaintStatus> ComplaintStatus { get; set; }
         public DbSet<CustomerType> CustomerType { get; set; }
         public DbSet<Employee> Employee { get; set; }
-        public DbSet<Gender> Gender { get; set; }
         public DbSet<NatureOfComplaint> NatureOfComplaint { get; set; }
         public DbSet<ProductAndService> ProductAndService { get; set; }
 

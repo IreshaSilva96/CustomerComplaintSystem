@@ -32,9 +32,5 @@ namespace CustomerComplaintSystem.Entities
 
         [MaxLength(30)]
         public string Email { get; set; }
-
-        [ForeignKey("GenderID")]
-        public Gender ParentGender { get; set; }
-        public int GenderID { get; set; }
     }
 }

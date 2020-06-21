@@ -28,6 +28,13 @@ namespace CustomerComplaintSystem.Controllers
             return Ok(complaints);
         }
 
+        //[HttpGet("dto")]
+        //public IActionResult GetAllComplaintsDTO()
+        //{
+        //    var complaints = _complaintRepo.GetAllComplaintsDTO();
+        //    return Ok(complaints);
+        //}
+
 
         [HttpGet("search/{ComplaintID}")]
         public IActionResult GetComplaintByID(int ComplaintID)

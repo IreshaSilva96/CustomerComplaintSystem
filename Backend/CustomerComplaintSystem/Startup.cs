@@ -46,7 +46,6 @@ namespace CustomerComplaintSystem
             services.AddScoped<IComplaintStatusInterface, ComplaintStatusRepository>();
             services.AddScoped<ICustomerTypeInterface, CustomerTypeRepository>();
             services.AddScoped<IEmployeeInterface, EmployeeRepository>();
-            services.AddScoped<IGenderInterface, GenderRepository>();
             services.AddScoped<INatureOfComplaintInterface, NatureOfComplaintRepository>();
             services.AddScoped<IProductAndServiceInterface, ProductAndServiceRepository>();
         }

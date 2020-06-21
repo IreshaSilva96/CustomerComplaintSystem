@@ -1,4 +1,5 @@
 ﻿using System;
+using CustomerComplaintSystem.Entities;
 using CustomerComplaintSystem.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -40,6 +41,24 @@ namespace CustomerComplaintSystem.Controllers
         {
             var employee = _employeeRepo.GetEmployeeByAttribute(Attribute);
             return Ok(employee);
+        }
+
+
+        [HttpPost("create")]
+        public IActionResult CreateEmployee([FromBody] Employee NewEmployee)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            if (NewEmployee == null)
+            {
+                return BadRequest();
+            }
+
+            _employeeRepo.CreateEmployee(NewEmployee);
+            return Ok();
         }
     }
 }

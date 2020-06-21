@@ -21,11 +21,7 @@ namespace CustomerComplaintSystem.DTO
 
         public string Description { get; set; }
 
-        public DateTime DateOfComplaint { get; set; }
-
         public DateTime ComplaintLoggedDate { get; set; }
-
-        public string Gender { get; set; }
 
         public string CustomerType { get; set; }
 

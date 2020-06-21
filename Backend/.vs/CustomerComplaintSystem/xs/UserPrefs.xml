@@ -1,19 +1,38 @@
 ﻿<Properties StartupConfiguration="{6EAB0E27-1584-45BD-ABDC-0747BCB0C905}|Default">
   <MonoDevelop.Ide.ItemProperties.CustomerComplaintSystem PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CustomerComplaintSystem/Entities/NatureOfComplaint.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CustomerComplaintSystem/Entities/Complaint.cs">
     <Files>
-      <File FileName="CustomerComplaintSystem/Controllers/ComplaintController.cs" Line="47" Column="15" />
-      <File FileName="CustomerComplaintSystem/DTO/GetAllComplaintsDTO.cs" />
+      <File FileName="CustomerComplaintSystem/Repositories /AccountHolderRepository.cs" Line="26" Column="89" />
+      <File FileName="CustomerComplaintSystem/appsettings.json" />
       <File FileName="CustomerComplaintSystem/Repositories /ComplaintRepository.cs" />
+      <File FileName="CustomerComplaintSystem/DTO/GetAllComplaintsDTO.cs" Line="1" Column="1" />
       <File FileName="CustomerComplaintSystem/Interfaces/IComplaintInterface.cs" />
-      <File FileName="CustomerComplaintSystem/Repositories /AgentRepository.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/Complaint.cs" Line="50" Column="16" />
+      <File FileName="CustomerComplaintSystem/DTO/GetAllEmployeesDTO.cs" Line="14" Column="1" />
+      <File FileName="CustomerComplaintSystem/Repositories /AgentTypeRepository.cs" />
+      <File FileName="CustomerComplaintSystem/Controllers/ComplaintController.cs" Line="39" Column="42" />
+      <File FileName="CustomerComplaintSystem/Controllers/EmployeeController.cs" />
+      <File FileName="CustomerComplaintSystem/Repositories /EmployeeRepository.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/AccountHolder.cs" />
       <File FileName="CustomerComplaintSystem/Interfaces/IAgentInterface.cs" />
+      <File FileName="CustomerComplaintSystem/Repositories /AgentRepository.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/ComplaintStatus.cs" />
+      <File FileName="CustomerComplaintSystem/Tutorial/Migrations/20200621010039_AddToDatabase1.2.cs" />
+      <File FileName="CustomerComplaintSystem/Controllers/AgentController.cs" />
+      <File FileName="CustomerComplaintSystem/Repositories /NatureOfComplaintRepository.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/NatureOfComplaint.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/Agent.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/AccountType.cs" />
       <File FileName="CustomerComplaintSystem/Entities/AgentType.cs" />
-      <File FileName="CustomerComplaintSystem/Entities/Complaint.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/Branch.cs" />
       <File FileName="CustomerComplaintSystem/Entities/Account.cs" />
-      <File FileName="CustomerComplaintSystem/Interfaces/IProductAndServiceInterface.cs" />
-      <File FileName="CustomerComplaintSystem/Entities/ProductAndService.cs" />
-      <File FileName="CustomerComplaintSystem/Entities/NatureOfComplaint.cs" Line="1" Column="1" />
+      <File FileName="CustomerComplaintSystem/Interfaces/IEmployeeInterface.cs" />
+      <File FileName="CustomerComplaintSystem/Interfaces/ICustomerTypeInterface.cs" />
+      <File FileName="CustomerComplaintSystem/Repositories /CustomerTypeRepository.cs" />
+      <File FileName="CustomerComplaintSystem/Controllers/CustomerTypeCotroller.cs" />
+      <File FileName="CustomerComplaintSystem/Entities/Employee.cs" />
+      <File FileName="CustomerComplaintSystem/Program.cs" />
+      <File FileName="CustomerComplaintSystem/CustomerComplaintSystem.csproj" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,12 +43,14 @@
               <Node name="DataBase" expanded="True" />
               <Node name="DTO" expanded="True" />
               <Node name="Entities" expanded="True">
-                <Node name="NatureOfComplaint.cs" selected="True" />
+                <Node name="Complaint.cs" selected="True" />
               </Node>
               <Node name="Interfaces" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Repositories " expanded="True" />
-              <Node name="Tutorial" expanded="True" />
+              <Node name="Tutorial" expanded="True">
+                <Node name="Migrations" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

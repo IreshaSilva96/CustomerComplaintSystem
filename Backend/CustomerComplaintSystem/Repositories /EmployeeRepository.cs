@@ -27,8 +27,7 @@ namespace CustomerComplaintSystem.Repositories
                             select new GetAllEmployeesDTO
                             {
                                 EmployeeID      = _employee.EmployeeID,
-                                FirstName       = _employee.FirstName,
-                                LastName        = _employee.LastName,
+                                FullName        = _employee.FirstName + " " + _employee.LastName,
                                 NIC             = _employee.NIC,
                                 ContactNumber   = _employee.ContactNumber,
                                 Address         = _employee.Address,
@@ -58,6 +57,12 @@ namespace CustomerComplaintSystem.Repositories
                                                                   || c.Email.ToString().Contains(Attribute)
                                                                   || c.BranchID.ToString().Contains(Attribute)).ToList();
             return employee;
+        }
+
+        public void CreateEmployee(Employee NewEmployee)
+        {
+            _applicationDbContext.Employee.Add(NewEmployee);
+            _applicationDbContext.SaveChanges();
         }
     }
 }

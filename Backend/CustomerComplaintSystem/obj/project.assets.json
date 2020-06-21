@@ -8016,11 +8016,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/janithdimantha/Desktop/CustomerComplaintSystem 14.37.33/CustomerComplaintSystem/CustomerComplaintSystem/CustomerComplaintSystem.csproj",
+      "projectUniqueName": "/Users/janithdimantha/Documents/GitHub/CustomerComplaintSystem/Backend/CustomerComplaintSystem/CustomerComplaintSystem.csproj",
       "projectName": "CustomerComplaintSystem",
-      "projectPath": "/Users/janithdimantha/Desktop/CustomerComplaintSystem 14.37.33/CustomerComplaintSystem/CustomerComplaintSystem/CustomerComplaintSystem.csproj",
+      "projectPath": "/Users/janithdimantha/Documents/GitHub/CustomerComplaintSystem/Backend/CustomerComplaintSystem/CustomerComplaintSystem.csproj",
       "packagesPath": "/Users/janithdimantha/.nuget/packages/",
-      "outputPath": "/Users/janithdimantha/Desktop/CustomerComplaintSystem 14.37.33/CustomerComplaintSystem/CustomerComplaintSystem/obj/",
+      "outputPath": "/Users/janithdimantha/Documents/GitHub/CustomerComplaintSystem/Backend/CustomerComplaintSystem/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

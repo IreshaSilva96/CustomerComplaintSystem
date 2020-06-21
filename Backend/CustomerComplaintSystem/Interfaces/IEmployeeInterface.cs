@@ -12,5 +12,7 @@ namespace CustomerComplaintSystem.Interfaces
         Employee GetEmployeeByID(int EmployeeID);
 
         ICollection<Employee> GetEmployeeByAttribute(string Attribute);
+
+        void CreateEmployee(Employee NewEmployee);
     }
 }

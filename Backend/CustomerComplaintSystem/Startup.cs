@@ -32,6 +32,18 @@ namespace CustomerComplaintSystem
         {
             services.AddControllers();
 
+            //Cors Enable
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyAllowSpecificOrigins",
+                    builder =>
+                    builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin());
+            });
+
+            //Cors end
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
@@ -61,6 +73,8 @@ namespace CustomerComplaintSystem
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("MyAllowSpecificOrigins");
 
             app.UseAuthorization();
 

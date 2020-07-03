@@ -7,9 +7,9 @@ namespace CustomerComplaintSystem.Interfaces
 {
     public interface IComplaintInterface 
     {
-        ICollection<GetAllComplaintsDTO> GetAllComplaints();
+        //ICollection<GetAllComplaintsDTO> GetAllComplaints();
 
-        //ICollection<Complaint> GetAllComplaints();
+        ICollection<Complaint> GetAllComplaints();
 
         Complaint GetComplaintByID(int ComplaintID);
 
